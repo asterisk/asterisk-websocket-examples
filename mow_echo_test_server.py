@@ -81,7 +81,7 @@ async def check_data(ws_media, sent_buffer, recvd_buffer,
     the received buffer. 
     """
     if received_bytes[0:sent_length] != sent_bytes:
-        logger.error(f"Received buffer[0:{sent_length}] != sent buffer[0:{received_length}]")
+        logger.error(f"Received buffer[0:{sent_length}] != sent buffer[0:{sent_length}]")
         test_failed = 1
     else:
         logger.info(f"Received buffer[0:{sent_length}] == sent buffer[0:{sent_length}]")
