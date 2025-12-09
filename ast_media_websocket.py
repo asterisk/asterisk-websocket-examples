@@ -96,12 +96,12 @@ class AstMediaWebSocket:
                     if "MEDIA_BUFFERING_COMPLETED" in message:
                         self.sending_file = False
                         ca = message.split(" ")
-                        if "zombies" in ca[1]:
+                        if "test" in ca[1]:
                             await ws_media.send("HANGUP")
                             break
                         else:
                             asyncio.create_task(self.echo_timer(ws_media, 
-                                "zombies.ulaw", 10, lock))
+                                "test.ulaw", 5, lock))
                     continue
                 if not self.sending_file:
                     await ws_media.send(message)
