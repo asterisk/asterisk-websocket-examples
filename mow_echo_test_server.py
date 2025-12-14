@@ -140,5 +140,5 @@ if __name__ == "__main__":
         asyncio.run(main())
     except KeyboardInterrupt:
         pass
-    logger.info(f"Test result: {test_failed} {'passed' if (test_failed == 0) else 'failed'}")
+    logger.info(f"Test {'passed' if test_failed == 0 else 'failed'} (test_failed={test_failed})")
     sys.exit(test_failed)
